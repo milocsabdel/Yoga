@@ -8,6 +8,6 @@ def index():
   
 @app.route('/contact')
 def contact():
-  return"Page contact"
+  return"Page Contact"
   
 app.run(host='0.0.0.0', port=8080)
