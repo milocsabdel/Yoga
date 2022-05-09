@@ -13,7 +13,14 @@ def contact():
 @app.route('/team')
 def team():
   return render_template("team.html")
-    
+  
+@app.route('/posts')
+def posts():
+  post = {
+    "title": "La recette des spaghettis",
+    "content": "On commence par ...",
+  }
+  return render_template("posts.html", post=post)
     
   
 app.run(host='0.0.0.0', port=8080)
