@@ -1,28 +1,9 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 from replit import db
 
 app = Flask('app')
-db["eleves"] = [{
-  "prenom": "fadoua",
-  "animal préféré": "chat"
-}, {
-  "prenom": "kawtar",
-  "aniùmal prréfére": "renard"
-}, {
-  "prenom": "hanna",
-  "animal préfére": "lion"        
-}]
 
-db["posts"] = [{
-  "title": "la recette de spaghettis",
-  "content": "on commence par"
-},{
-  "title": "la recette de courgette",
-  "content": "blabla"
-},{
-  "title": "la recette de spaghettis",
-  "content": "on commence par"
-}]
+  
               
 @app.route('/')
 def index():
@@ -33,9 +14,6 @@ def index():
 def contact():
   return render_template("contact.html")
 
-@app.route('/post/new')
-def post_new():
-  return render_template("post_new.html")
 
 @app.route('/team')
 def team():
@@ -44,6 +22,20 @@ def team():
 @app.route('/posts')
 def posts():
   return render_template("posts.html", posts=db["posts"])
+
+
+@app.route('/post/new')
+def post_new():
+  return render_template("post_new.html")
+
+
+@app.route('/post/create', methods=['POST'])
+def create():
+  db['posts'].append({
+   'titre': request.form["title"],
+   'content':request.form["content"]
+ })
+  return render_template("index.html")
                
 @app.route('/posts/<id>')
 def show(id):

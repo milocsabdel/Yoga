@@ -1,14 +1,15 @@
 {% extends "base.html" %}
 
 {% block content %}
+<form action="{{ url_for('create') }}" method="post">
 
 
 
   <label for="titre">titre:</label>
-  <input type="text">
+  <input type="text" name="title">
 <br>
 <label for="content">contenu:</label>
-  <input type="text">
+  <input type="text" name="content">
 <br>
 
 <input type="submit" value="Clique ici créer nouvel article">
