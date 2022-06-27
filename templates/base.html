@@ -4,15 +4,43 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- CSS only -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  
+  <link rel="stylesheet" href="static/css/style.css">
   <title>Document</title>
 </head>
 <body>
-  <a href="/">lien vers la page index</a>
-  <a href="/contact">lien vers la page contact</a>
-  <a href="/posts">Lien vers la page posts</a> <br>
-  <a href="/team">Lien vers la page team</a>
-  <a href="/post/new">nouveau</a>
-  <br>
-  {% block content %} {% endblock %}
+     <nav class="navbar navbar-expand-md bg-light navbar-light">
+        <div class="container">
+        <a class="navbar-brand" href=""></a>
+        <img src="static/images/Logo Great Classic.png" width="129px" height="113px" alt="CoolBrand">
+
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav justified-content-end">
+          <li class="nav-item">
+            <a class="nav-link" href="/">Accueil</a>
+          </li>
+         <li class="nav-item">
+            <a class="nav-link" href="/nos-prix">Nos Prix</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/notre-equipe">Notre Équipe</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/la-section-des-enfants">La section des enfants</a>
+          </li>
+        </ul>
+        </div>
+          </div>
+      </nav>
+  {% block content %}{% endblock %}
+  <!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 </body>
 </html>
